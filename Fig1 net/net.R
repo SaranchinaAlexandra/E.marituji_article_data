@@ -5,7 +5,8 @@ library(ggplot2)
 library(ggtree)
 
 ## read the data = nexus file recorded with SplitsTree4 (!)
-Nnet <- read.nexus.networx("E:/EmarCOI.nex")
+#Nnet <- read.nexus.networx("E:/EmarCOI.nex")
+Nnet <- read.nexus.networx("EmarCOInet.nex")
 
 pn <- 
   ggsplitnet(Nnet, col="black") + 
@@ -53,7 +54,8 @@ pnCOI
 
 
 ## read the data = nexus file recorded with SplitsTree4 (!)
-Nnet1 <- read.nexus.networx("E:/Emar18s.nex")
+#Nnet1 <- read.nexus.networx("E:/Emar18s.nex")
+Nnet1 <- read.nexus.networx("Emar18snet.nex")
 
 pn1 <- 
   ggsplitnet(Nnet1, col="black") + 
@@ -99,13 +101,13 @@ pn18s
 
 
 library(ggpubr)
-png("Figure_2.png", width = 20, height = 10, res=600, units="cm")
-ggarrange(pnCOI+theme(), 
+png("Figure_1_draft.png", width = 20, height = 10, res=600, units="cm")
+ggarrange(pnCOI+theme(), pn18s,
           labels = c("A", "B"))
 dev.off()
 
-svg("Figure_1.svg", width = 7.87, height = 3.94)
-ggarrange(pnCOI, 
+svg("Figure_1_draft.svg", width = 7.87, height = 3.94)
+ggarrange(pnCOI, pn18s
           labels = c("A", "B"))
 dev.off()
 
